@@ -3,9 +3,8 @@ import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
 
-// 6845a8f8
-
-const API_URL = "https://www.omdbapi.com?apikey=6845a8f8";
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+const API_URL = `https://www.omdbapi.com?apikey=${API_KEY}`;
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -59,10 +58,6 @@ function App() {
           <h2>No movies found</h2>
         </div>
       )}
-
-      {/* <div className="container">
-        <MovieCard movie1={movies[0]} />
-      </div> */}
     </div>
   );
 }
